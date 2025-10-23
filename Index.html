@@ -11,7 +11,7 @@
         }
         
         .gradient-bg {
-            background: linear-gradient(135deg, #1c1b22 0%, #cccccc 100%);
+            background: linear-gradient(135deg, #140e33 0%, #4a77a7 100%);
         }
         
         .card-hover {
@@ -22,6 +22,14 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+
+        .about-bg {
+            background-image: url('Asset/img_tree.png');
+            background-size: 50% auto; /* lebar penuh, tinggi otomatis */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
         
         .achievement-counter {
             transition: all 2s ease-in-out;
@@ -60,60 +68,120 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
+
+        .icon-image {
+        width: 40px;
+        height: 40px;
+        }
+
+        .icon-pdf {
+        width: 36px;
+        height: 36px;
+        }
+
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="text-2xl font-bold text-gray-800">
-                    <span class="text-indigo-600">📚</span> Guru Portfolio
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-600 hover:text-indigo-600 transition-colors">Beranda</a>
-                    <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors">Tentang</a>
-                    <a href="#karyatulis" class="text-gray-600 hover:text-indigo-600 transition-colors">Karya Tulis</a>
-                    <a href="#achievements" class="text-gray-600 hover:text-indigo-600 transition-colors">Prestasi</a>
-                    <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition-colors">Pengalaman</a>
-                    <!-- <a href="#video" class="text-gray-600 hover:text-indigo-600 transition-colors">Video</a> -->
-                    <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition-colors">Kontak</a>
-                    
-                </div>
-                <button id="mobile-menu-btn" class="md:hidden p-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+        <div class="text-2xl font-bold text-gray-800">
+            <span class="text-indigo-600">📚</span> Guru Portfolio
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-2 space-y-2">
-                <a href="#home" class="block py-2 text-gray-600 hover:text-indigo-600">Beranda</a>
-                <a href="#about" class="block py-2 text-gray-600 hover:text-indigo-600">Tentang</a>
-                <a href="#karyatulis" class="block py-2 text-gray-600 hover:text-indigo-600">karyatulis</a>
-                <a href="#achievements" class="block py-2 text-gray-600 hover:text-indigo-600">Prestasi</a>
-                <a href="#experience" class="block py-2 text-gray-600 hover:text-indigo-600">pengalaman</a>
-                <!-- <a href="#video" class="text-gray-600 hover:text-indigo-600 transition-colors">Video</a> -->
-                <a href="#contact" class="block py-2 text-gray-600 hover:text-indigo-600">Kontak</a>
-            </div>
-        </div>
-    </nav>
 
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 items-center">
+            <a href="#home" class="text-gray-600 hover:text-indigo-600">Beranda</a>
+            <a href="#about" class="text-gray-600 hover:text-indigo-600">Tentang</a>
+
+            <!-- Dropdown -->
+            <div class="relative group">
+            <button class="flex items-center text-gray-600 hover:text-indigo-600 transition-colors">
+                Karya
+                <svg class="w-4 h-4 ml-1 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+
+                <!-- Dropdown menu -->
+                <div
+                    class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:visible group-hover:opacity-100 bg-white shadow-lg rounded-lg w-48 border border-gray-100 transition-all duration-200 ease-out z-50">
+                    <a href="#karya_tulis" class="block px-4 py-2 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600">Karya Tulis</a>
+                    <a href="#karya_inovatif" class="block px-4 py-2 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600">Karya Inovatif</a>
+                </div>
+            </div>
+
+            <a href="#achievements" class="text-gray-600 hover:text-indigo-600">Prestasi</a>
+            <a href="#experience" class="text-gray-600 hover:text-indigo-600">Pengalaman</a>
+            <a href="#video" class="text-gray-600 hover:text-indigo-600">Video</a>
+            <a href="#contact" class="text-gray-600 hover:text-indigo-600">Kontak</a>
+        </div>
+
+        <!-- Mobile Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div class="px-4 py-2 space-y-2">
+            <a href="#home" class="block py-2 text-gray-600 hover:text-indigo-600">Beranda</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-indigo-600">Tentang</a>
+
+            <!-- Dropdown Mobile -->
+            <div>
+            <button id="dropdown-btn" 
+                    class="flex justify-between w-full py-2 text-gray-600 hover:text-indigo-600 transition-colors">
+                Karya
+                <svg id="dropdown-icon" class="w-4 h-4 ml-2 transform transition-transform" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+
+                <!-- Dropdown Content -->
+                <div id="dropdown-menu" 
+                    class="max-h-0 overflow-hidden ml-4 space-y-1 transition-all duration-300 ease-in-out">
+                    <a href="#karya_tulis" class="block py-1 text-gray-600 hover:text-indigo-600">Karya Tulis</a>
+                    <a href="#karya_inovatif" class="block py-1 text-gray-600 hover:text-indigo-600">Karya Inovatif</a>
+                </div>
+            </div>
+
+            <a href="#achievements" class="block py-2 text-gray-600 hover:text-indigo-600">Prestasi</a>
+            <a href="#experience" class="block py-2 text-gray-600 hover:text-indigo-600">Pengalaman</a>
+            <a href="#video" class="block py-2 text-gray-600 hover:text-indigo-600">Video</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-indigo-600">Kontak</a>
+        </div>
+        </div>
+
+    </nav>
+    
     <!-- Hero Section -->
     <section id="home" class="gradient-bg min-h-full flex items-center pt-16">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="text-center text-white">
+                <br> 
+                <br>
                 <div class="book-icon text-6xl mb-6">📖</div>
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
-                    Ibu <span class="text-yellow-300">Yuli Widdiyati</span>
+                    <span class="text-yellow-300">Yuli Widdiyati</span>
                 </h1>
+                <br>
                 <p class="text-xl md:text-2xl mb-8 typing-animation" id="typing-text">Guru Matematika Berpengalaman</p>
+                <br>
                 <p class="text-xl mb-10 max-w-2xl mx-auto opacity-90">
                     Mendidik dengan hati, mengajar dengan passion. Berpengalaman 20+ tahun dalam dunia pendidikan, 
                     berkomitmen mencerdaskan generasi bangsa melalui pembelajaran yang inovatif dan menyenangkan.
                 </p>
+                
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="#experience" class="bg-yellow-400 text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-colors">
                         Lihat Pengalaman
@@ -122,13 +190,19 @@
                         Hubungi Saya
                     </a>
                 </div>
+                <br> 
+                <br>
+                <br> 
+                <br>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" class="py-20 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('Asset/img_tree.png');">
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white/70 rounded-2xl p-8 shadow-lg">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Tentang Saya</h2>
                 <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
@@ -144,20 +218,20 @@
 
                 <div class="responsive">
                     <div class="gallery">
-                        <a target="_blank" href="Asset/img_profile3.png">
-                            <img src="Asset/img_profile3.png" alt="Image">
+                        <a target="_blank" href="Asset/img_profile5.png">
+                            <img src="Asset/img_profile5.png" alt="Image">
                         </a>
                         <br>
-                        <h3 class="text-lg font-semibold text-gray-800">Yuli Widdiyati</h3>
+                        <h2 class="text-3xl font-semibold text-gray-800" style="margin-left: 140px;">Yuli Widdiyati</h2>
                     </div>
                 </div>
 
                 <div>
-                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Pendidik Berpengalaman & Bersertifikat</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
+                    <h3 class="text-4xl font-bold mb-6 text-gray-800">Pendidik Berpengalaman & Bersertifikat</h3>
+                    <p class="text-xl text-black mb-6 leading-relaxed">
                         Tenaga pendidik di SMP Negeri 1 Lamongan dengan latar belakang pengalaman dalam pengajaran, kegiatan sosial keagamaan, dan kepemimpinan. Berpengalaman dalam mengajar dan aktif dalam organisasi. Memiliki kemampuan komunikasi yang baik, serta passion dalam membagikan pengetahuan dan keterampilan. 
                         </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
+                    <p class="text-xl text-black mb-6 leading-relaxed">
                         Berupaya  menjadi guru yang adaptif terhadap perkembangan teknologi digital dan mampu memanfaatkannya untuk menciptakan pembelajaran yang menarik, bermakna, dan humanis.
                         </p>
                     <!-- <div class="space-y-4 mb-6">
@@ -194,11 +268,11 @@
     </section>
 
     <!-- Karya Tulis Section -->
-    <section id="karyatulis" class="py-20 bg-gray-200">
+    <section id="karya_tulis" class="py-20 bg-blue-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Karya Tulis</h2>
-                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <h2 class="text-4xl font-bold text-white mb-4">Karya Tulis</h2>
+                <div class="w-20 h-1 bg-indigo-100 mx-auto"></div>
             </div>
             <div class="space-y-8">
 
@@ -285,11 +359,11 @@
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="py-20 bg-gray-300">
+    <section id="achievements" class="py-20 bg-blue-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Prestasi & Penghargaan</h2>
-                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <div class="w-20 h-1 bg-indigo-800 mx-auto"></div>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <!-- Achievement Stats  -->
@@ -380,7 +454,7 @@
                             </a>
                         </div>
                         <br>
-                        <p class="text-dark-500 text-sm">Piagam Penghargaan Lomba Penulisan Artikel Ilmiah pembelajaran masa pandemi.</p>
+                        <p class="text-dark-500 text-sm">Piagam Penghargaan Lomba Penulisan karya_tulis Ilmiah pembelajaran masa pandemi.</p>
                     </div>
 
                     <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
@@ -397,7 +471,7 @@
                     </div>
 
                     <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
-                        <div class="text-4xl mb-4">💡</div>
+                        <div class="text-4xl mb-4">🔎</div>
                         <h3 class="text-lg font-bold mb-2">Sertifikat Calon Fasilitator Pendidikan Guru Penggerak (PGP)</h3>
                         <p class="text-gray-600 text-sm mb-2">Tahun 2023.</p>
                         <div class="gallery">
@@ -410,7 +484,7 @@
                     </div>
 
                     <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
-                        <div class="text-4xl mb-4">💡</div>
+                        <div class="text-4xl mb-4">🗓️</div>
                         <h3 class="text-lg font-bold mb-2">Surat tanda Tamat Pendidikan </h3>
                         <p class="text-gray-600 text-sm mb-2">Tahun 2024.</p>
                         <div class="gallery">
@@ -423,7 +497,7 @@
                     </div>
 
                     <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
-                        <div class="text-4xl mb-4">💡</div>
+                        <div class="text-4xl mb-4">🌟</div>
                         <h3 class="text-lg font-bold mb-2">Sertifikat Pembekalan Calon Nara Sumber Berbagi Praktik Baik </h3>
                         <p class="text-gray-600 text-sm mb-2">Tahun 2025.</p>
                         <div class="gallery">
@@ -436,7 +510,7 @@
                     </div>
 
                     <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
-                        <div class="text-4xl mb-4">💡</div>
+                        <div class="text-4xl mb-4">🌀</div>
                         <h3 class="text-lg font-bold mb-2">Sertifikat Pembekalan Calon Pengajar Pembelajaran Mendalam</h3>
                         <p class="text-gray-600 text-sm mb-2">Tahun 2025.</p>
                         <div class="gallery">
@@ -449,7 +523,7 @@
                     </div>
 
                     <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
-                        <div class="text-4xl mb-4">💡</div>
+                        <div class="text-4xl mb-4">🪷</div>
                         <h3 class="text-lg font-bold mb-2">Nara Sumber Training of Trainers (ToT) Bagi Fasilitator Pelatihan Pembelajaran Mendalam</h3>
                         <p class="text-gray-600 text-sm mb-2">Tahun 2025.</p>
                         <div class="gallery">
@@ -466,11 +540,11 @@
     </section>
 
     <!-- experience Section -->
-    <section id="experience" class="py-20 bg-gray-200">
+    <section id="experience" class="py-20 bg-slate-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Pengalaman organisasi profesi</h2>
-                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <h2 class="text-4xl font-bold text-white mb-4">Pengalaman organisasi profesi</h2>
+                <div class="w-20 h-1 bg-indigo-100 mx-auto"></div>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
 
@@ -644,37 +718,399 @@
                     
                 </div>
 
+                <!-- Testimonial 9 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class=" rounded-full flex items-center justify-center text-white font-bold"> </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Nara sumber Wokshop penguatan kurikulum merdeka  di MTS N 1 Bondowoso.</h4>
+                            <p class="text-sm text-gray-600">Nara Sumber</p>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="Asset/img_pemateri4.jpg">
+                            <img src="Asset/img_pemateri4.jpg" alt="Image">
+                        </a>
+                    </div>
+
+                    <br>
+                    
+                    <p class="text-gray-600 italic">
+                        "Menjadi Nara sumber di MTS N 1 Bondowoso."
+                    </p>
+                    
+                </div>
+
+                <!-- Testimonial 10 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class=" rounded-full flex items-center justify-center text-white font-bold"> </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Berbagi Praktik Baik di MGMP Matematika.</h4>
+                            <p class="text-sm text-gray-600">Nara Sumber</p>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="Asset/img_pemateri5.jpg">
+                            <img src="Asset/img_pemateri5.jpg" alt="Image">
+                        </a>
+                    </div>
+
+                    <br>
+                    
+                    <p class="text-gray-600 italic">
+                        "Berbagi praktik baik tentang P5."
+                    </p>
+                    
+                </div>
+
+                <!-- Testimonial 11 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class=" rounded-full flex items-center justify-center text-white font-bold"> </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Workshop MGMP Matematika.</h4>
+                            <p class="text-sm text-gray-600">Nara Sumber</p>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="Asset/img_pemateri6.jpg">
+                            <img src="Asset/img_pemateri6.jpg" alt="Image">
+                        </a>
+                    </div>
+
+                    <br>
+                    
+                    <p class="text-gray-600 italic">
+                        "Menjadi Nara Sumber  pada Workshop Pembelajaran Mendalam MGMP Matematika."
+                    </p>
+                    
+                </div>
+
             </div>
     </section>
     
-    <!-- Video Section 
-    <section id="video" class="py-20 bg-dark-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Video Section -->
+    <section id="video" class="py-20 bg-slate-500">
+        <div class="max-w-none mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Video</h2>
-                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            <h2 class="text-4xl font-bold text-white mb-4">Video</h2>
+            <div class="w-20 h-1 bg-white mx-auto"></div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
 
-          ---  Video 1 ---
-            <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
-                <div class="flex items-center mb-4">
-                    <div class="rounded-full flex items-center justify-center text-white font-bold">
-                        
-                    </div>
-                    <div class="ml-4">
-                        <h4 class="font-bold text-gray-800">AMV findland saga</h4>
-                        <p class="text-sm text-gray-600">.</p>
-                    </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Video 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="mb-4">
+                <!-- ✅ Gunakan iframe untuk menampilkan video -->
+                <iframe
+                    class="w-full h-64 rounded-lg"
+                    src="https://www.youtube.com/embed/7g2hIc3wdII?si=J8ollmwm9IZq_gi4"
+                    title="video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
                 </div>
-                <p class="text-gray-600 italic">
-                    "Deskripsi singkat ttg pengalaman"
-                </p>
+                <div>
+                    <h4 class="font-bold text-gray-800">AKSI NYATA MODUL 3 3 PENGELOLAAN PROGRAM YANG BERDAMPAK POSITIF PADA MURID</h4>
+                    <p class="text-gray-600 italic">
+                        "Deskripsi."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="mb-4">
+                    <iframe
+                        class="w-full h-64 rounded-lg"
+                        src="https://www.youtube.com/embed/WkCKTJCzT64?si=YPKcuXLoszui2XOB"
+                        title="video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">AKSI NYATA MODUL 2.3 COACHING UNTUK SUPERVISI AKADEMIK</h4>
+                    <p class="text-gray-600 italic">
+                        "Deskripsi."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="mb-4">
+                <!-- ✅ Gunakan iframe untuk menampilkan video -->
+                <iframe
+                    class="w-full h-64 rounded-lg"
+                    src="https://www.youtube.com/embed/eR5AVUI4fNw?si=WcxG0nReApsuafZ0"
+                    title="video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">AKSI NYATA MODUL 1.4 BUDAYA POSITIF</h4>
+                    <p class="text-gray-600 italic">
+                        "Deskripsi."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="mb-4">
+                <!-- ✅ Gunakan iframe untuk menampilkan video -->
+                <iframe
+                    class="w-full h-64 rounded-lg"
+                    src="https://www.youtube.com/embed/xEla0PquTDc?si=sb0AA9GhnStXiU5p"
+                    title="video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Membuat Keyakinan Kelas</h4>
+                    <p class="text-gray-600 italic">
+                        "Deskripsi."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="mb-4">
+                <!-- ✅ Gunakan iframe untuk menampilkan video -->
+                <iframe
+                    class="w-full h-64 rounded-lg"
+                    src="https://www.youtube.com/embed/ygt3HaERE00?si=YFU7RCNys-a0xZ5x"
+                    title="video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Segitiga Restitusi</h4>
+                    <p class="text-gray-600 italic">
+                        "Deskripsi."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Video 6 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="mb-4">
+                <!-- ✅ Gunakan iframe untuk menampilkan video -->
+                <iframe
+                    class="w-full h-64 rounded-lg"
+                    src="https://www.youtube.com/embed/ROuKvabk9So?si=dfGJQ594_t-KQ9rV"
+                    title="video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Projek Penguatan Profil Pelajar Pancasila , Tema Kewirausahaan</h4>
+                    <p class="text-gray-600 italic">
+                        "Deskripsi."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Video 7 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="mb-4">
+                <!-- ✅ Gunakan iframe untuk menampilkan video -->
+                <iframe
+                    class="w-full h-64 rounded-lg"
+                    src="https://www.youtube.com/embed/L9ZiY5mEfvQ?si=9Ix01YaEkd-415-Q"
+                    title="video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Mendesain Kegiatan Pembelajaran Kokurikuler (P5) tanpa mengubah jadwal Intrakurikuler</h4>
+                    <p class="text-gray-600 italic">
+                        "Deskripsi."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Video 8 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="mb-4">
+                <!-- ✅ Gunakan iframe untuk menampilkan video -->
+                <iframe
+                    class="w-full h-64 rounded-lg"
+                    src="https://www.youtube.com/embed/Xnov79wr2VY?si=Sy1sYKrBgLjdqfeh"
+                    title="video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Pemanfaatan kartu bilbul dalam pembelajaran matematika</h4>
+                    <p class="text-gray-600 italic">
+                        "Deskripsi."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Video 9 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                <div class="mb-4">
+                <!-- ✅ Gunakan iframe untuk menampilkan video -->
+                <iframe
+                    class="w-full h-64 rounded-lg"
+                    src="https://www.youtube.com/embed/zhlen13r1QQ?si=9IhO4x6xQAUjxyyE"
+                    title="video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Luas Permukaan Kubus dan Balok</h4>
+                    <p class="text-gray-600 italic">
+                        "Deskripsi."
+                    </p>
+                </div>
+
             </div>
         </div>
-    </section> -->
+    </section>
 
+     <!-- karya inovatif -->
+    <section id="karya_inovatif" class="py-20 bg-slate-400">
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-black mb-4">Karya Inovatif</h2>
+            <div class="w-20 h-1 bg-black mx-auto"></div>
+            </div>
 
+            <div class="grid md:grid-cols-2 lg:grid-cols-1 gap-8">
+                <!-- content karya inovatif -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <div class="flex items-center mb-4">
+                <div class="ml-4">
+                    <h2 class="text-2xl font-bold mb-4">Pemanfaatan Artificial Intelligence dan SketchUp Sebagai Media Pembelajaran Mendalam Berbasis STEM</h2>
+                    <p class="text-sm text-gray-600">2025</p>
+                </div>
+                </div>
+                <div class="card">
+                    <h2>Deskripsi Karya Inovatif</h2>
+                    <textarea placeholder="Deskripsi" 
+                    style="width: 100%; height: 150px; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-family: sans-serif;"></textarea>
+
+                    <p class="info">
+                        Kunjungi untuk Informasi lebih lanjut <br>
+                    <a  href="https://iklan-komersial-bin8-bab2.my.canva.site/salinan-dari-media-pembelajaran-interaktif-skala-proporsi-dan-laju-perubahan-bertema-lingkungan-sehat" 
+                        target="_blank" 
+                        class="text-blue-600 hover:underline" 
+                        rel="noopener noreferrer">
+                        Canva.com</a>
+              
+                    </p>
+
+                    <br>
+
+                    <p class="info">
+                        Baca pdf untuk informasi selanjutnya.<br>
+                    <a  href="dokumen/Best-Practice.pdf" 
+                        target="_blank" 
+                        class="text-blue-600 hover:underline" 
+                        rel="noopener noreferrer">
+                        PDF Best Practices</a>
+
+                        <br><br>
+
+                    <a  href="dokumen/RPM-STEM-perbandingan.pdf" 
+                        target="_blank" 
+                        class="text-blue-600 hover:underline" 
+                        rel="noopener noreferrer">
+                        PDF Rencana Pembelajaran mendalam</a>
+              
+                    </p>
+                    
+                    <br>
+                    <br>
+
+                    <div style="text-align:center">
+                    <p class="text-xl font-bold mb-4">Dokumentasi Kegiatan</p>
+                    </div>
+
+                    <br>
+
+                    <!-- The four columns --> tambahkan foto dokuuumenasi kegiatan
+                    <div class="row">
+                        <div class="column">
+                            <img src="Asset/img_dokumentasi1.jpg" alt="image" style="width:100%" onclick="myFunction(this);">
+                        </div>
+                        <br>
+                        <div class="column">
+                            <img src="Asset/img_dokumentasi2.jpg" alt="image" style="width:100%" onclick="myFunction(this);">
+                        </div>
+                        <br>
+                        <div class="column">
+                            <img src="Asset/img_dokumentasi3.jpg" alt="image" style="width:100%" onclick="myFunction(this);">
+                        </div>
+                        <br>
+                        <div class="column">
+                            <img src="Asset/img_dokumentasi4.jpg" alt="image" style="width:100%" onclick="myFunction(this);">
+                        </div>
+                        <br>
+                        <div class="column">
+                            <img src="Asset/img_dokumentasi5.jpg" alt="image" style="width:100%" onclick="myFunction(this);">
+                        </div>
+                        <br>
+                        <div class="column">
+                            <img src="Asset/img_dokumentasi6.jpg" alt="image" style="width:100%" onclick="myFunction(this);">
+                        </div>
+                        <br>
+                        <div class="column">
+                            <img src="Asset/img_dokumentasi7.jpg" alt="image" style="width:100%" onclick="myFunction(this);">
+                        </div>
+                        <br>
+                        <div class="column">
+                            <img src="Asset/img_dokumentasi8.jpg" alt="image" style="width:100%" onclick="myFunction(this);">
+                        </div>
+                        <br>
+                        <div class="column">
+                            <img src="Asset/img_dokumentasi9.jpg" alt="image" style="width:100%" onclick="myFunction(this);">
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                        <img id="expandedImg" style="width:100%">
+                        <div id="imgtext"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div
+            id="imageModal"
+            class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-80 z-50">
+
+            <span
+            id="closeModal"
+            class="absolute top-8 right-12 text-white text-4xl font-bold cursor-pointer hover:text-gray-300"
+            >&times;</span>
+            <img id="modalImage" class="max-w-3xl rounded-lg shadow-2xl" />
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 gradient-bg">
@@ -786,29 +1222,36 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        document.addEventListener("DOMContentLoaded", function () {
+            // Tombol hamburger menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                });
+            }
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
+            // Tombol dropdown "Karya"
+            const dropdownBtn = document.getElementById('dropdown-btn');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const dropdownIcon = document.getElementById('dropdown-icon');
+
+            if (dropdownBtn && dropdownMenu && dropdownIcon) {
+                dropdownBtn.addEventListener('click', () => {
+                const isOpen = dropdownMenu.classList.contains('max-h-40');
+                if (isOpen) {
+                    dropdownMenu.classList.remove('max-h-40');
+                    dropdownMenu.classList.add('max-h-0');
+                    dropdownIcon.classList.remove('rotate-180');
+                } else {
+                    dropdownMenu.classList.remove('max-h-0');
+                    dropdownMenu.classList.add('max-h-40');
+                    dropdownIcon.classList.add('rotate-180');
                 }
+                });
+            }
             });
-        });
 
         // Typing animation
         const typingText = document.getElementById('typing-text');
@@ -856,7 +1299,7 @@
 
             if (current < target) {
                 counter.innerText = Math.ceil(current + increment);
-                setTimeout(updateCount, 40); // kecepatan update (ms)
+                setTimeout(updateCount, 10); // kecepatan update (ms)
             } else {
                 counter.innerText = target; // pastikan angka akhir tepat
             }
@@ -903,6 +1346,15 @@
                 navbar.classList.remove('bg-white/95');
             }
         });
+
+        function myFunction(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            var imgText = document.getElementById("imgtext");
+            expandImg.src = imgs.src;
+            imgText.innerHTML = imgs.alt;
+            expandImg.parentElement.style.display = "block";
+        }
+
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e8bf701061fd7f',t:'MTc2MDQ2MjQzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
