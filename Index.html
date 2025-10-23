@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Guru Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1c1b22 0%, #cccccc 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .achievement-counter {
+            transition: all 2s ease-in-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .typing-animation {
+            border-right: 2px solid #ffffff;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: #ffffff; }
+            51%, 100% { border-color: transparent; }
+        }
+        
+        .book-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-gray-800">
+                    <span class="text-indigo-600">📚</span> Guru Portfolio
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-indigo-600 transition-colors">Beranda</a>
+                    <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors">Tentang</a>
+                    <a href="#karyatulis" class="text-gray-600 hover:text-indigo-600 transition-colors">Karya Tulis</a>
+                    <a href="#achievements" class="text-gray-600 hover:text-indigo-600 transition-colors">Prestasi</a>
+                    <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition-colors">Pengalaman</a>
+                    <!-- <a href="#video" class="text-gray-600 hover:text-indigo-600 transition-colors">Video</a> -->
+                    <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition-colors">Kontak</a>
+                    
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-gray-600 hover:text-indigo-600">Beranda</a>
+                <a href="#about" class="block py-2 text-gray-600 hover:text-indigo-600">Tentang</a>
+                <a href="#karyatulis" class="block py-2 text-gray-600 hover:text-indigo-600">karyatulis</a>
+                <a href="#achievements" class="block py-2 text-gray-600 hover:text-indigo-600">Prestasi</a>
+                <a href="#experience" class="block py-2 text-gray-600 hover:text-indigo-600">pengalaman</a>
+                <!-- <a href="#video" class="text-gray-600 hover:text-indigo-600 transition-colors">Video</a> -->
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-indigo-600">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-full flex items-center pt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center text-white">
+                <div class="book-icon text-6xl mb-6">📖</div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
+                    Ibu <span class="text-yellow-300">Yuli Widdiyati</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 typing-animation" id="typing-text">Guru Matematika Berpengalaman</p>
+                <p class="text-xl mb-10 max-w-2xl mx-auto opacity-90">
+                    Mendidik dengan hati, mengajar dengan passion. Berpengalaman 20+ tahun dalam dunia pendidikan, 
+                    berkomitmen mencerdaskan generasi bangsa melalui pembelajaran yang inovatif dan menyenangkan.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#experience" class="bg-yellow-400 text-gray-800 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-colors">
+                        Lihat Pengalaman
+                    </a>
+                    <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-800 transition-colors">
+                        Hubungi Saya
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Tentang Saya</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!--<div>
+                    <div class="w-80 h-80 mx-auto bg-gradient-to-br from-indigo-400 to-cyan-500 rounded-full flex items-center justify-center">
+                        <svg class="w-40 h-40 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.9 1 3 1.9 3 3V21C3 22.1 3.9 23 5 23H19C20.1 23 21 22.1 21 21V9M19 9H14V4H19V9Z"/>
+                        </svg>
+                    </div>
+                </div>-->
+
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Asset/img_profile3.png">
+                            <img src="Asset/img_profile3.png" alt="Image">
+                        </a>
+                        <br>
+                        <h3 class="text-lg font-semibold text-gray-800">Yuli Widdiyati</h3>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Pendidik Berpengalaman & Bersertifikat</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Tenaga pendidik di SMP Negeri 1 Lamongan dengan latar belakang pengalaman dalam pengajaran, kegiatan sosial keagamaan, dan kepemimpinan. Berpengalaman dalam mengajar dan aktif dalam organisasi. Memiliki kemampuan komunikasi yang baik, serta passion dalam membagikan pengetahuan dan keterampilan. 
+                        </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Berupaya  menjadi guru yang adaptif terhadap perkembangan teknologi digital dan mampu memanfaatkannya untuk menciptakan pembelajaran yang menarik, bermakna, dan humanis.
+                        </p>
+                    <!-- <div class="space-y-4 mb-6">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-indigo-600 rounded-full mr-3"></div>
+                            <span class="text-gray-700">S2 Teknologi Pendidikan - Universitas Indonesia</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-indigo-600 rounded-full mr-3"></div>
+                            <span class="text-gray-700">S1 Pendidikan Matematika - UNJ</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-indigo-600 rounded-full mr-3"></div>
+                            <span class="text-gray-700">Sertifikat Pendidik Profesional</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-indigo-600 rounded-full mr-3"></div>
+                            <span class="text-gray-700">Pelatihan Kurikulum Merdeka</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-2xl font-bold text-indigo-600">15+</div>
+                            <div class="text-sm text-gray-600">Tahun Mengajar</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="text-2xl font-bold text-indigo-600">500+</div>
+                            <div class="text-sm text-gray-600">Siswa Diajar</div>
+                        </div>
+                    </div> -->
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Karya Tulis Section -->
+    <section id="karyatulis" class="py-20 bg-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Karya Tulis</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="space-y-8">
+
+                <!-- Karya Tulis 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800"> Pembelajaran matematika dengan Hybrid-1 Untuk Meningkatkan Pemahaman konsep dan kemandirian belajar siswa</h3>
+                            <p class="text-indigo-600 font-semibold">SMP Negeri 1 Lamongan</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Hybrid-1 adalah aplikasi pembelajaran yang digunakan selama padameni di SMP Negeri 1 Lamongan, dengan menyediakan berbagai menu untuk pembelajaran, Penelitian ini bertujuan untuk mendiskripsikan pembelajaran dengan menggunakan hybrid-1 untuk meningkatkan pemahaman konsep serta kemandirian siswa. Subyek dari penelitian ini adalah siswa kelas VIII J berjumlah 33 siswa, dengan materi relasi dan fungsi, bertempat di SMP Negeri 1 Lamongan. 
+                        </p>
+                    <p class="text-gray-600 mb-4">
+                       Penelitian dilaksanakan pada tanggal 18 Agustus sampai dengan 5 Oktober 2021dengan blended learning, artinya 50 % siswa tatap muka di sekolah dan 50% di rumah,menggunakan aplikasi hybrid-1. Setelah dilaksanakan pembelajaran dengan hybrid-1 maka di peroleh hasil Pembelajaran dengan Hybrid-1 efektif untuk meningkatkan pemahaman konsep siswa. Pembelajaran ini mendukung perubahan siswa dari pasif menerima pengetahuan menjadi aktif dan mereka dapat menyadari kelemahan diri masing-masing dalam memahami konsep. Siswa berpartisipasi dalam kegiatan-kegiatan yang membantu mereka berpikir tentang pengetahuan mereka sebelumnya dan merefleksikannya. Sehingga tercipta kemandirian belajar.
+                        </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm rounded-full">hybrid</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Pemahaman konsep</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Kemandirian siswa</span>
+                    </div>
+                </div>
+
+                <!-- Karya Tulis 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Kartu Bilbul dalam Pembelajaran Bilangan bulat kelas 7</h3>
+                            <p class="text-indigo-600 font-semibold">SMP Negeri 1 Lamongan</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Matematika masih dianggap sebagai pelajaran yang sulit dan seringkali tidak di senangi oleh siswa. selain itu Pembelajaran matematika seringkali dilaksanakan dengan metode yang monoton, seperti ceramah, pemberian tugas dan diskusi, jarang menggunakan media. seorang guru hanya menjelaskan materi matematika dengan ceramah di lanjut dengan mengerjakan soal soal, ketika siswa sudah dapat menyelesaikan soal berpijak dari hal tersebut ada satu pemikiran untuk membuat media pembelajaran yang menyenangkan bagi siswa. Yaitu kartu BILBUL yang saya gunakan untuk pembelajarn pada siswa kelas 7 di SMP Negeri 1 Lamongan, adapun tujuan dari penggunaan media kartu bilbul ini adalah siswa dapat memahami operasi penjumlahan dan pengurangan bulangan bulat. 
+                        </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">Kartu Bilbul</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">Bilangan Bulat</span>
+                    </div>
+                </div>
+
+                <!-- Karya Tulis 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Pemanfaatan LKIS (Lembar Kegiatan Interaktif Siswa) dalam Hybrid-1 Untuk Meningkatkan Kemandirian Belajar Siswa</h3>
+                            <p class="text-indigo-600 font-semibold">SMP Negeri 1 Lamongan</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Pada tahun ajaran 2021/2022, kebijakan pembelajaran daring dan luring ini bersifat dinamis mengacu pada Pemberlakuan Pembatasan Kegiatan Masyarakat (PPKM) di tiap tiap daerah dan Keputusan Bersama (SKB) 4 menteri tentang Panduan Penyelengaraan Pembelajaraan di Masa Pandemi Covid-19 tahun 2021. Pada implementasi pembelajaran, muncul kebijakan baru terkait Pembelajaran Tatap Muka (PTM) terbatas.
+                        </p>
+                    <p class="text-gray-600 mb-4">
+                        Proses pembelajaran mengikuti peraturan dan kebijakan yang ditetapkan pemerintah pusat, saat ini yang diberlakukan adalah PPKM berdasarkan assesmen situasi Covid-19 (Level 4,3,2,1). Dimana PPKM Level 3 dan 4, PTM terbatas dilarang dan pembelajaran dilaksanakan secara jarak jauh. Kabupaten Lamongan yang pada saat ini masih level 3 menyelenggarakan pendidikannya dengan cara tatap muka terbatas, berkisar 50% dari jumlah siswa 2 yang bisa hadir ke sekolahan. Sehingga pembelajaran dilaksanakan secara daring dan luring baik dengan tatap muka ataupun jarak jauh. Kegiatan belajar mengajar antara guru dan siswa dengan lokasi terpisah, memerlukan sistem telekomunikasi interaktif untuk menghubungkan keduanya dan berbagai sumber daya yang diperlukan di dalamnya.
+                        </p>
+                    <p class="text-gray-600 mb-4">
+                        Sebagai bentuk inovasi dalam pelaksanaan pembelajaran saat pandemi ini, SMP N 1 Lamongan telah mengembangkan produk media pembelajaran e-learning berbasis website yang dinamai dengan Hybrid-1. Media Hybrid-1dikembangkan untuk memudahkan kegiatan pembelajaran baik yang dilaksanakan secara daring ataupun luring, baik secara synchronous ataupun asynchronous.
+                        </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 text-sm rounded-full">lembar kerja interaktif</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">Kemaandirian Siswa</span>
+                    </div>
+                </div>
+
+                <!-- Karya Tulis 4 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Mendesain kegiatan pembelajaran kokurikuler (P5) tanpa mengubah jadawal Intra kurikuler</h3>
+                            <p class="text-indigo-600 font-semibold">SMP Negeri 1 Lamongan</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Projek penguatan profil pelajar Pancasila adalah projek yang akan menemukan jawaban atas pertanyaan mengenai peserta didik dengan kompetensi seperti apa yang ingin dihasilkan oleh sistem pendidikan Indonesia. Projek tersebut dilakukan dengan menanamkan karakter pada pribadi peserta didik berdasarkan nilai-nilai pancasila. Kompetensi P5 memperhatikan beberapa faktor yang dapat memberikan pengaruh, baik faktor internal atau faktor eksternal. Adapun contoh faktor internal yang diperhatikan adalah ideologi, sementara contoh dari faktor Eksternal adalah tantangan di era digital.  Proyek profil berupaya menjadikan peserta didik sebagai penerus bangsa yang unggul dan produktif. serta dapat turut berpartisipasi dalam Pembangunan global yang berkesinambungan. 
+                        </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">kokurikuler</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm rounded-full">intrakurikuler</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Jadwal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Prestasi & Penghargaan</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <!-- Achievement Stats  -->
+            <div class="text-center p-6 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl text-white">
+                <div class="text-3xl mb-2">🏆</div>
+                <div class="text-2xl font-bold achievement-counter" data-target="11">0</div>
+                <div class="text-sm opacity-90">Penghargaan Diterima</div>
+            </div>
+            <div class="text-center p-6 bg-gradient-to-br from-green-500 to-teal-600 rounded-xl text-white">
+                <div class="text-3xl mb-2">🎓</div>
+                <div class="text-2xl font-bold achievement-counter" data-target="5">0</div>
+                <div class="text-sm opacity-90">Capaian</div>
+            </div>
+            <div class="text-center p-6 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl text-white">
+                <div class="text-3xl mb-2">📚</div>
+                <div class="text-2xl font-bold achievement-counter" data-target="4">0</div>
+                <div class="text-sm opacity-90">Karya Tulis</div>
+            </div>
+            <div class="text-center p-6 bg-gradient-to-br from-pink-500 to-red-600 rounded-xl text-white">
+                <div class="text-3xl mb-2">👥</div>
+                <div class="text-2xl font-bold achievement-counter" data-target="2">0</div>
+                <div class="text-sm opacity-90">Organisasi Profesi</div>
+            </div>
+            </div>
+        
+            <!-- Achievement Cards -->
+            <div class="max-w-none mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
+                        <div class="text-4xl mb-4">🥉</div>
+                        <h3 class="text-lg font-bold mb-2">Juara 3 Guru Inovatif kabupaten lamongan</h3>
+                        <p class="text-gray-600 text-sm mb-2">Bupati Lamongan - 2023</p>
+                        <div class="gallery">
+                            <a target="_blank" href="Asset/img_prestasi1.jpg">
+                                <img src="Asset/img_prestasi1.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <br>
+                        <p class="text-dark-500 text-sm">Piagam Penghargaan pada lomba guru inovatif jenjang SMP yang diselanggarakan oleh Dinas Pendidikan Kabupaten Lamongan 2023.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
+                        <div class="text-4xl mb-4">🏅</div>
+                        <h3 class="text-lg font-bold mb-2"> Pemakalah  Seminar Pendidikan Matematika Tingkat Nasional</h3>
+                        <p class="text-gray-600 text-sm mb-2">Kemendikbudriset - 2021</p>
+                        <div class="gallery">
+                            <a target="_blank" href="Asset/img_prestasi2.jpg">
+                                <img src="Asset/img_prestasi2.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <br>
+                        <p class="text-dark-500 text-sm">Pembelajaran Matematika dengan Hybrid-1 untuk meningkatkan Pemahaman Konsep dan Kemandirian Belajar Siswa.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
+                        <div class="text-4xl mb-4">⭐</div>
+                        <h3 class="text-lg font-bold mb-2">Peserta terbaik Guru Inovatif</h3>
+                        <p class="text-gray-600 text-sm mb-2">OSN Matematika - 2021</p>
+                        <div class="gallery">
+                            <a target="_blank" href="Asset/img_prestasi3.jpg">
+                                <img src="Asset/img_prestasi3.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <br>
+                        <p class="text-dark-500 text-sm">Piagam Penghargaan sebagai Peserta Terbaik pada Lomba Guru Inovatif yang diselenggarakan oleh Dinas Pendidikan Kabupaten Lamongan 2023.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
+                        <div class="text-4xl mb-4">📖</div>
+                        <h3 class="text-lg font-bold mb-2">Piagam Penghargaan untuk Juara 2</h3>
+                        <p class="text-gray-600 text-sm mb-2">Dinas pendidikan - 2021</p>
+                        <div class="gallery">
+                            <a target="_blank" href="Asset/img_prestasi4.jpg">
+                                <img src="Asset/img_prestasi4.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <br>
+                        <p class="text-dark-500 text-sm">Piagam Penghargaan Lomba Video Pembelajaran masa pandemi.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
+                        <div class="text-4xl mb-4">🎯</div>
+                        <h3 class="text-lg font-bold mb-2">Piagam penghargaan untuk Juara 3</h3>
+                        <p class="text-gray-600 text-sm mb-2">Dinas pendidikan - 2021</p>
+                        <div class="gallery">
+                            <a target="_blank" href="Asset/img_prestasi5.jpg">
+                                <img src="Asset/img_prestasi5.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <br>
+                        <p class="text-dark-500 text-sm">Piagam Penghargaan Lomba Penulisan Artikel Ilmiah pembelajaran masa pandemi.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
+                        <div class="text-4xl mb-4">💡</div>
+                        <h3 class="text-lg font-bold mb-2">Pembekalan Calon Pengajar Praktik Angkatan 7</h3>
+                        <p class="text-gray-600 text-sm mb-2">Kemendikbudriset - 2022</p>
+                        <div class="gallery">
+                            <a target="_blank" href="Asset/img_prestasi6.jpg">
+                                <img src="Asset/img_prestasi6.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <br>
+                        <p class="text-dark-500 text-sm">Sertifikat Pembekalan Calon Pengajar Praktik pendidikan guru penggerak.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
+                        <div class="text-4xl mb-4">💡</div>
+                        <h3 class="text-lg font-bold mb-2">Sertifikat Calon Fasilitator Pendidikan Guru Penggerak (PGP)</h3>
+                        <p class="text-gray-600 text-sm mb-2">Tahun 2023.</p>
+                        <div class="gallery">
+                            <a target="_blank" href="Asset/img_prestasi7.jpg">
+                                <img src="Asset/img_prestasi7.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <br>
+                        <p class="text-dark-500 text-sm">.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
+                        <div class="text-4xl mb-4">💡</div>
+                        <h3 class="text-lg font-bold mb-2">Surat tanda Tamat Pendidikan </h3>
+                        <p class="text-gray-600 text-sm mb-2">Tahun 2024.</p>
+                        <div class="gallery">
+                            <a target="_blank" href="Asset/img_prestasi8.jpg">
+                                <img src="Asset/img_prestasi8.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <br>
+                        <p class="text-dark-500 text-sm">.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
+                        <div class="text-4xl mb-4">💡</div>
+                        <h3 class="text-lg font-bold mb-2">Sertifikat Pembekalan Calon Nara Sumber Berbagi Praktik Baik </h3>
+                        <p class="text-gray-600 text-sm mb-2">Tahun 2025.</p>
+                        <div class="gallery">
+                            <a target="_blank" href="Asset/img_prestasi9.jpg">
+                                <img src="Asset/img_prestasi9.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <br>
+                        <p class="text-dark-500 text-sm">.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
+                        <div class="text-4xl mb-4">💡</div>
+                        <h3 class="text-lg font-bold mb-2">Sertifikat Pembekalan Calon Pengajar Pembelajaran Mendalam</h3>
+                        <p class="text-gray-600 text-sm mb-2">Tahun 2025.</p>
+                        <div class="gallery">
+                            <a target="_blank" href="Asset/img_prestasi10.jpg">
+                                <img src="Asset/img_prestasi10.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <br>
+                        <p class="text-dark-500 text-sm">.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-xl card-hover">
+                        <div class="text-4xl mb-4">💡</div>
+                        <h3 class="text-lg font-bold mb-2">Nara Sumber Training of Trainers (ToT) Bagi Fasilitator Pelatihan Pembelajaran Mendalam</h3>
+                        <p class="text-gray-600 text-sm mb-2">Tahun 2025.</p>
+                        <div class="gallery">
+                            <a target="_blank" href="Asset/img_prestasi11.jpg">
+                                <img src="Asset/img_prestasi11.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <br>
+                        <p class="text-dark-500 text-sm">.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- experience Section -->
+    <section id="experience" class="py-20 bg-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Pengalaman organisasi profesi</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="rounded-full flex items-center justify-center text-white font-bold">
+                            
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800"> Sekretaris MGMP Matematika Kab.Lamongan</h4>
+                            <p class="text-sm text-gray-600">2021 - 2024</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Deskripsi singkat ttg pengalaman"
+                    </p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="rounded-full flex items-center justify-center text-white font-bold">
+                            
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800"> Wakil Ketua MGMP Matematika Kab.Lamongan</h4>
+                            <p class="text-sm text-gray-600">2025 - 2028</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Deskripsi singkat ttg pengalaman"
+                    </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class=" rounded-full flex items-center justify-center text-white font-bold"> </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Training of Trainers (ToT) Bagi Fasilitator Pelatihan Pembelajaran Mendalam.</h4>
+                            <p class="text-sm text-gray-600">Nara Sumber</p>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="Asset/img_nara_iot.jpg">
+                            <img src="Asset/img_nara_iot.jpg" alt="Image">
+                        </a>
+                    </div>
+                    
+                    <br>
+
+                    <p class="text-gray-600 italic">
+                        "menjadi nara sumber pada TOT bagi fasilitator pelatihan pembelejaran mendalam di Madiun."
+                    </p>
+                    
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class=" rounded-full flex items-center justify-center text-white font-bold"> </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Fasilitator Pelatihan Pembelajaran Mendalam Kabupaten.</h4>
+                            <p class="text-sm text-gray-600">Nara Sumber</p>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="Asset/img_fasil1.jpg">
+                            <img src="Asset/img_fasil1.jpg" alt="Image">
+                        </a>
+                    </div>
+
+                    <br>
+                    
+                    <p class="text-gray-600 italic">
+                        "menjadi fasilitator  pada pelatihan  pembelejaran mendalam."
+                    </p>
+                    
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class=" rounded-full flex items-center justify-center text-white font-bold"> </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800"> Pemateri Workshop Pembelajaran Mendalam di SMP Negeri 1 lamongan.</h4>
+                            <p class="text-sm text-gray-600">Nara Sumber</p>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="Asset/img_fotbar_workshop.jpg">
+                            <img src="Asset/img_fotbar_workshop.jpg" alt="Image">
+                        </a>
+                    </div>
+
+                    <br>
+                    
+                    <p class="text-gray-600 italic">
+                        "menjadi nara sumber pada workshop pembelajaran mendalam di SMP Negeri 1 Lamongan."
+                    </p>
+                    
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class=" rounded-full flex items-center justify-center text-white font-bold"> </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Pemateri Pembelajaran Mendalam  di Kemenag.</h4>
+                            <p class="text-sm text-gray-600">Nara Sumber</p>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="Asset/img_pemateri.jpg">
+                            <img src="Asset/img_pemateri.jpg" alt="Image">
+                        </a>
+                    </div>
+
+                    <br>
+                    
+                    <p class="text-gray-600 italic">
+                        "Pemateri pada Workshop pembelajaran mendalam Kemenag Lamongan."
+                    </p>
+                    
+                </div>
+
+                <!-- Testimonial 7 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class=" rounded-full flex items-center justify-center text-white font-bold"> </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Pemateri Pembelajaran Mendalam di SMP Negeri 3 Babat.</h4>
+                            <p class="text-sm text-gray-600">Nara Sumber</p>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="Asset/img_pemateri2.jpg">
+                            <img src="Asset/img_pemateri2.jpg" alt="Image">
+                        </a>
+                    </div>
+
+                    <br>
+                    
+                    <p class="text-gray-600 italic">
+                        "Menjadi nara sumber pembelajaran mendalam di SMP Negeri 3 Babat."
+                    </p>
+                    
+                </div>
+
+                <!-- Testimonial 8 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class=" rounded-full flex items-center justify-center text-white font-bold"> </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-800">Pemateri Pembelajaran Mendalam di Penyelenggra PAUD Kabupaten Lamongan.</h4>
+                            <p class="text-sm text-gray-600">Nara Sumber</p>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <a target="_blank" href="Asset/img_pemateri3.jpg">
+                            <img src="Asset/img_pemateri3.jpg" alt="Image">
+                        </a>
+                    </div>
+
+                    <br>
+                    
+                    <p class="text-gray-600 italic">
+                        "Pemateri ( sosialisasi )  pembelajaran mendalam untuk penyelengara PAUD Se Kabupaten Lamongan."
+                    </p>
+                    
+                </div>
+
+            </div>
+    </section>
+    
+    <!-- Video Section 
+    <section id="video" class="py-20 bg-dark-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Video</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+          ---  Video 1 ---
+            <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                <div class="flex items-center mb-4">
+                    <div class="rounded-full flex items-center justify-center text-white font-bold">
+                        
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="font-bold text-gray-800">AMV findland saga</h4>
+                        <p class="text-sm text-gray-600">.</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 italic">
+                    "Deskripsi singkat ttg pengalaman"
+                </p>
+            </div>
+        </div>
+    </section> -->
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Mari Berkolaborasi</h2>
+                <p class="text-xl text-white/90">Tertarik untuk berdiskusi tentang pendidikan? Hubungi saya!</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="text-white">
+                    <h3 class="text-2xl font-bold mb-6">Informasi Kontak</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 mr-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <span>yuliwiddi@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 mr-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <span>+62 852-3008-3720</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 mr-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            <span>SMP Negeri 1 Lamongan</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 mr-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span>Konsultasi Pendidikan Tersedia</span>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold mb-4">Ikuti Media Sosial</h4>
+                        <div class="bg-white p-5 rounded-xl shadow-lg card-hover" style="width: 280px; height: 90px;">
+                        <div class="flex space-x-12">
+                            <a href="https://www.facebook.com/share/177KTnjaBH/" class="w-100 h-100 bg-white/90 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                                <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0 0 22 12z" fill="#1877F2"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/yuliwiddi_?igsh=ejBrZDd0Yjh5ejVs" class="w-100 h-100 bg-white/90 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                                <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 2C4.8 2 3 3.8 3 6v12c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4V6c0-2.2-1.8-4-4-4H7zm10 2c1.1 0 2 .9 2 2v1h-3V4h1zm-5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" fill="#E1306C"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.tiktok.com/@julaiwiddi?_t=ZS-90amPbX9nOB&_r=1" class="w-100 h-100 bg-white/90 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                                <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 3v12.6a2.4 2.4 0 1 1-2.4-2.4c.3 0 .6.1.9.2V9.2c-2.5.2-4.5 2.3-4.5 4.9a4.9 4.9 0 0 0 9.8 1.2V7.1c1.1.8 2.4 1.3 3.8 1.3V5.4c-1.4 0-2.7-.5-3.8-1.3V3H9z" fill="#000000"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <!--<div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">Nama</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:border-white" placeholder="Nama Anda" required>
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:border-white" placeholder="email@example.com" required>
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">Subjek</label>
+                            <select id="subject" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white focus:outline-none focus:border-white" required>
+                                <option value="" class="text-gray-800">Pilih Subjek</option>
+                                <option value="konsultasi" class="text-gray-800">Konsultasi Pendidikan</option>
+                                <option value="kolaborasi" class="text-gray-800">Kolaborasi Penelitian</option>
+                                <option value="pelatihan" class="text-gray-800">Pelatihan Guru</option>
+                                <option value="lainnya" class="text-gray-800">Lainnya</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm font-medium mb-2">Pesan</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:border-white resize-none" placeholder="Sampaikan pesan Anda..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-yellow-400 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                    <div id="form-message" class="mt-4 p-4 rounded-lg hidden"></div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="text-2xl font-bold mb-4">
+                    <span class="text-indigo-400">📚</span> Guru Portfolio
+                </div>
+                <p class="text-gray-400 mb-4">© 2025 Yuli Widdiyati. </p>
+                <p class="text-gray-500 text-sm">Mendidik dengan hati, mengajar dengan passion 💙</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Typing animation
+        const typingText = document.getElementById('typing-text');
+        const texts = ['Guru Matematika Berpengalaman', 'Pendidik Profesional', 'Fasilitator PM', 'Guru Penggerak', 'Pengajar Praktek'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeWriter, typeSpeed);
+        }
+
+        // Start typing animation
+        typeWriter();
+
+        // Ambil semua elemen counter
+        const counters = document.querySelectorAll('.achievement-counter');
+
+        counters.forEach(counter => {
+            const updateCount = () => {
+            const target = +counter.getAttribute('data-target'); // angka tujuan
+            const current = +counter.innerText; // angka saat ini
+            const increment = target / 100; // kecepatan animasi
+
+            if (current < target) {
+                counter.innerText = Math.ceil(current + increment);
+                setTimeout(updateCount, 40); // kecepatan update (ms)
+            } else {
+                counter.innerText = target; // pastikan angka akhir tepat
+            }
+            };
+
+            updateCount();
+        });
+
+
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Simulate form submission
+            formMessage.className = 'mt-4 p-4 rounded-lg bg-green-500/20 border border-green-500/30 text-white';
+            formMessage.textContent = `Terima kasih ${name}! Pesan Anda tentang "${subject}" telah diterima. Saya akan segera menghubungi Anda di ${email}.`;
+            formMessage.classList.remove('hidden');
+
+            // Reset form
+            contactForm.reset();
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white/95');
+                navbar.classList.remove('bg-white/90');
+            } else {
+                navbar.classList.add('bg-white/90');
+                navbar.classList.remove('bg-white/95');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e8bf701061fd7f',t:'MTc2MDQ2MjQzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
